@@ -9,5 +9,5 @@ class UserCreateForm(UserCreationForm):
     def __init__(self,*args,**kwargs):
         super().__init__(*args,**kwargs)
         # custom labels for username, email
-        self.fields['username'].label = 'Display Name'
-        seld.fields['email'].label = 'Email Adress'
+        self.fields['username'].label = 'Wyświetlana nazwa użytkownika'
+        self.fields['email'].label = 'Adres email'

@@ -20,4 +20,8 @@ from . import views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', views.HomePage.as_view(), name='home'),
+    url(r'^accounts/', include('accounts.urls', namespace='accounts')),
+    url(r'^accounts/', include('django.contrib.auth.urls')),
+    url(r'^after_login/$', views.AfterLoginPage.as_view(), name='after_login'),
+    url(r'^after_logout/$', views.AfterLogoutPage.as_view(), name='after_logout')
 ]
