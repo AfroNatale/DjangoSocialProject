@@ -23,5 +23,7 @@ urlpatterns = [
     url(r'^accounts/', include('accounts.urls', namespace='accounts')),
     url(r'^accounts/', include('django.contrib.auth.urls')),
     url(r'^after_login/$', views.AfterLoginPage.as_view(), name='after_login'),
-    url(r'^after_logout/$', views.AfterLogoutPage.as_view(), name='after_logout')
+    url(r'^after_logout/$', views.AfterLogoutPage.as_view(), name='after_logout'),
+    url(r'^posts/', include('posts.urls', namespace='posts')),
+    url(r'^groups/', include('groups.urls', namespace='groups')),
 ]

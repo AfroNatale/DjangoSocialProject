@@ -1,6 +1,6 @@
 from django.shortcuts import render
-from django.contrib.auth.mixins import (LoginRequiredMixins,
-                                        PermissionRequiredMixins)
+from django.contrib.auth.mixins import (LoginRequiredMixin,
+                                        PermissionRequiredMixin)
 from django.contrib import messages
 
 from django.core.urlresolvers import reverse
@@ -32,7 +32,7 @@ class JoinGroup(LoginRequiredMixin, generic.RedirectView):
         try:
             GroupMember.objects.create(user=self.request.user, group=group)
         except IntegrityError:
-            messages.warning(self.request, "Uwaga, jesteś już członkiem grupy {}".format(group.name)))
+            messages.warning(self.request, "Uwaga, jesteś już członkiem grupy {}".format(group.name))
         else:
             messages.success(self.request, "Jesteś teraz członkiem grupy {}".format(group.name))
 

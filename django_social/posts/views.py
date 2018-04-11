@@ -1,6 +1,7 @@
 from django.shortcuts import render
-from django.contrib.auth.mixins import LoginRequiredMixins
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.urlresolvers import reverse_lazy
+from django.contrib import messages
 
 from django.http import Http404
 
